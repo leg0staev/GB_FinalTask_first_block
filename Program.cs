@@ -3,9 +3,10 @@ string[] sourceArray = GetSourceArray("Введите слова для анал
 int numberOfCharacters = GetNumber("Введите максимальное количество букв в слове: ");
 
 int wordsQuantity = LetsFindQuantity(sourceArray, numberOfCharacters);
-string[] ResultArray = LetsFindWords(sourceArray, wordsQuantity, numberOfCharacters);
+string[] resultArray = LetsFindWords(sourceArray, wordsQuantity, numberOfCharacters);
 
-PrintArray(ResultArray);
+Console.WriteLine("слова, удовлетворяющие условию:");
+PrintArray(resultArray);
 
 
 int LetsFindQuantity(string[] array, int maxLength){
