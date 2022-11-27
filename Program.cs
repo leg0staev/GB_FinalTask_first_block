@@ -1,28 +1,13 @@
-﻿string[] sourceArray = new string[7] {
-                                    "I",
-                                    "category",
-                                    "love",
-                                    "genetic",
-                                    "c#",
-                                    "outside",
-                                    "included"                                    
-};
-
-
-
-//string[] sourceArray = GetSourceArray("Введите слова для анализа через пробел: ");
-int numberOfCharacters = GetNumber("Введите максимальное количество символов в слове: ");
+﻿Console.WriteLine("Здравствуйте! введите несколько слов и я выведу только те, которые меньше заданного количества букв!");
+string[] sourceArray = GetSourceArray("Введите слова для анализа через пробел: ");
+int numberOfCharacters = GetNumber("Введите максимальное количество букв в слове: ");
 
 int wordsQuantity = LetsFindQuantity(sourceArray, numberOfCharacters);
 string[] ResultArray = LetsFindWords(sourceArray, wordsQuantity, numberOfCharacters);
-//проверка
-Console.WriteLine($"количество элементов в исходном масииве => {wordsQuantity}");
 
-
-//результат работы
 PrintArray(ResultArray);
 
-// найду количество слов меньше 3 символов
+
 int LetsFindQuantity(string[] array, int maxLength){
     int quantity = 0;
     for (int i = 0; i < array.Length; i++)
@@ -32,7 +17,7 @@ int LetsFindQuantity(string[] array, int maxLength){
     return quantity;
 }
 
-//выберу все слова, которые удовлетворяют условию в новый массив
+
 string[] LetsFindWords(string[] array, int newArrayLength, int maxLength){
     string[] resultArray = new string[newArrayLength];
     int newIndex = 0;
@@ -45,7 +30,8 @@ string[] LetsFindWords(string[] array, int newArrayLength, int maxLength){
     return resultArray;
 }
 
-// метод вывода массива в консоль
+
+
 void PrintArray(string[] array){
     for (int i = 0; i < array.Length; i++)
     {
@@ -53,7 +39,7 @@ void PrintArray(string[] array){
     }
 }
 
-//запрос на ввод слов от пользователя
+
 string[] GetSourceArray(string systemMessage){
     Console.Write(systemMessage);
 
@@ -62,7 +48,7 @@ string[] GetSourceArray(string systemMessage){
     return sourceArray;
 }
 
-//запрос на ввод числа у пользователя
+
 int GetNumber(string input) 
 {
   Console.Write(input);
